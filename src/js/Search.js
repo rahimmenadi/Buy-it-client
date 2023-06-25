@@ -151,12 +151,12 @@ function searchclick(){
     localStorage.setItem('searchValue',searchis.value);
 console.log("searchbtnclicked")
     // Get the search query from the input field
-	axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products?keyword='+searchisis.value)
+	axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?keyword='+searchisis.value)
   .then(response => {
     SearchProductList = response.data.data;
     
     displaySearchProduct();
-    // axios.get('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {
+    // axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {
     //     headers: {
     //         Authorization: `Bearer ${token}`
     //       }
@@ -185,12 +185,12 @@ btn_search.addEventListener("click" , ()=>{
     localStorage.setItem('searchValue',searchis.value);
 console.log("searchbtnclicked")
     // Get the search query from the input field
-	axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products?keyword='+searchis.value)
+	axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?keyword='+searchis.value)
   .then(response => {
     SearchProductList = response.data.data;
     
     displaySearchProduct();
-    // axios.get('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {
+    // axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {
     //     headers: {
     //         Authorization: `Bearer ${token}`
     //       }
@@ -215,12 +215,12 @@ console.log("searchbtnclicked")
 
 
 let SearchProductList = [];
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products?keyword='+searchvalue)
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?keyword='+searchvalue)
   .then(response => {
     SearchProductList = response.data.data;
     
     displaySearchProduct();
-    // axios.get('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {
+    // axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {
     //     headers: {
     //         Authorization: `Bearer ${token}`
     //       }
@@ -314,7 +314,7 @@ let all_categories_items = "";
 const subcategoriesByCategoryId = new Map();
 
         // Fetch the categories separately
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/categories')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/categories')
 .then(categoryResponse => {
 // Handle the category response data
 const categories = categoryResponse.data.data;
@@ -351,7 +351,7 @@ for (let i = 0; i < categories.length; i++) {
 
 
         
-    axios.get('https://buy-it-sigma.herokuapp.com/api/v1/subcategories')
+    axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/subcategories')
     .then(response => {
         // Handle the response data
         const subcategories = response.data.data;
@@ -466,7 +466,7 @@ console.error(categoryError);
 
 //======================cart number=============================================================
 
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/cart',  {
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart',  {
     headers: {
         Authorization: `Bearer ${token}`
       }
@@ -657,12 +657,12 @@ if(selectedqValue == "one-star"){
 }
 
 console.log(the_filter_link)
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products?keyword='+searchisis.value+the_filter_link)
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?keyword='+searchisis.value+the_filter_link)
 .then(response => {
   SearchProductList = response.data.data;
-  console.log('https://buy-it-sigma.herokuapp.com/api/v1/products?keyword='+searchisis.value+the_filter_link)
+  console.log('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?keyword='+searchisis.value+the_filter_link)
   displaySearchProduct();
-  // axios.get('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {
+  // axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {
   //     headers: {
   //         Authorization: `Bearer ${token}`
   //       }

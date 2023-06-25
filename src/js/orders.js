@@ -111,7 +111,7 @@ function displayorders(ordering){
 
 
 
-  axios.get('https://buy-it-sigma.herokuapp.com/api/v1/orders', {
+  axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/orders', {
     headers: {
         Authorization: `Bearer ${token}`
       }})

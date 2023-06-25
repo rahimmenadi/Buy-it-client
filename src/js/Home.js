@@ -12,7 +12,7 @@ function updateCartNumber(cartLenth,totalPrice){
 function sendProductIdCard(k){
     
     // Make a POST request to add the product
-    axios.post('https://buy-it-sigma.herokuapp.com/api/v1/cart',  {productId : AllProductList[k]._id}  , {
+    axios.post('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart',  {productId : AllProductList[k]._id}  , {
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -64,8 +64,8 @@ if(localStorage.getItem('token')==null){
 }
 
 let Total_cart = document.getElementById("total-cart-home");
-//https://buy-it-sigma.herokuapp.com/api/v1/categories/id/subcategories
-//https://buy-it-sigma.herokuapp.com/api/v1/products?sort=-createdAt
+//https://easy-blue-beaver-yoke.cyclic.app//api/v1/categories/id/subcategories
+//https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?sort=-createdAt
 
 //categories code
 
@@ -81,7 +81,7 @@ let all_categories_items = "";
 const subcategoriesByCategoryId = new Map();
 
         // Fetch the categories separately
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/categories')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/categories')
 .then(categoryResponse => {
 // Handle the category response data
 const categories = categoryResponse.data.data;
@@ -111,7 +111,7 @@ for (let i = 0; i < categories.length; i++) {
                     </li>
                     `
             //category code sellers code
-            axios.get(`https://buy-it-sigma.herokuapp.com/api/v1/categories/${category._id}/products?limit=3&sort=-sold`)
+            axios.get(`https://easy-blue-beaver-yoke.cyclic.app//api/v1/categories/${category._id}/products?limit=3&sort=-sold`)
                 .then(response => {
                     // Handle the response data
                     console.log(response.data.data);
@@ -211,7 +211,7 @@ for (let i = 0; i < categories.length; i++) {
 
 
         
-    axios.get('https://buy-it-sigma.herokuapp.com/api/v1/subcategories')
+    axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/subcategories')
     .then(response => {
         // Handle the response data
         const subcategories = response.data.data;
@@ -383,7 +383,7 @@ let btn_search = document.getElementById("search-btn");
 
 
 let newProductList = [];
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products?sort=-createdAt')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products?sort=-createdAt')
   .then(response => {
     newProductList = response.data.data;
     
@@ -503,7 +503,7 @@ function btn_wishlist(link,i) {
   const token = localStorage.getItem("token");
 
 
-  axios.get('https://buy-it-sigma.herokuapp.com/api/v1/cart',  {
+  axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart',  {
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -517,7 +517,7 @@ function btn_wishlist(link,i) {
 
   function addProduct(product) {
     // Make a POST request to add the product
-    axios.post('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {productId:product._id} , {
+    axios.post('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {productId:product._id} , {
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -535,7 +535,7 @@ function btn_wishlist(link,i) {
   function removeProduct(productId) {
   
       // Make a DELETE request to remove the product
-      axios.delete(`https://buy-it-sigma.herokuapp.com/api/v1/wishlist/${productId}`, {
+      axios.delete(`https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist/${productId}`, {
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -613,7 +613,7 @@ function sendNewProductIdCard(k){
   // Navigate to another page with the encoded product ID
   
   
-  axios.post('https://buy-it-sigma.herokuapp.com/api/v1/cart',   newProductList[k]._id , {
+  axios.post('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart',   newProductList[k]._id , {
     headers: {
         Authorization: `Bearer ${token}`
       }
@@ -632,12 +632,12 @@ console.log(localStorage.getItem("token"))
 
 let AllProductList = [];
 let BestProductList = [];
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products')
   .then(response => {
     AllProductList = response.data.data;
     
     displayProduct();
-    axios.get('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {
+    axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -657,7 +657,7 @@ axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products')
   .catch(error => {
     console.log(error)
   });
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products')
   .then(response => {
     BestProductList = response.data.data;
     
@@ -829,7 +829,7 @@ offer_bar.style.width="30%"
 
 
 
-// axios.post('https://buy-it-sigma.herokuapp.com/api/v1/categories', newProduct, {
+// axios.post('https://easy-blue-beaver-yoke.cyclic.app//api/v1/categories', newProduct, {
 //   headers: {
 //     Authorization: `Bearer ${token}`
 //   },

@@ -189,7 +189,7 @@ let all_categories_items = "";
 const subcategoriesByCategoryId = new Map();
 
         // Fetch the categories separately
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/categories')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/categories')
 .then(categoryResponse => {
 // Handle the category response data
 const categories = categoryResponse.data.data;
@@ -226,7 +226,7 @@ for (let i = 0; i < categories.length; i++) {
 
 
         
-    axios.get('https://buy-it-sigma.herokuapp.com/api/v1/subcategories')
+    axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/subcategories')
     .then(response => {
         // Handle the response data
         const subcategories = response.data.data;
@@ -359,7 +359,7 @@ let panierall= document.getElementById("panier-all");
 let panier_items = "";
 const token = localStorage.getItem("token");
 console.log(token)
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/cart', {
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart', {
   headers: {
       Authorization: `Bearer ${token}`
     }
@@ -382,7 +382,7 @@ axios.get('https://buy-it-sigma.herokuapp.com/api/v1/cart', {
 
     
     for (let i = 0; i  <cartItemsis.length; i++) {
-        axios.get(`https://buy-it-sigma.herokuapp.com/api/v1/products/${cartItemsis[i].product}`
+        axios.get(`https://easy-blue-beaver-yoke.cyclic.app//api/v1/products/${cartItemsis[i].product}`
         , {
         headers: {
             Authorization: `Bearer ${token}`
@@ -472,7 +472,7 @@ function changeQuantityminus(r){
       });
       
       // Make the request to update the product quantity
-      axiosInstance.put(`https://buy-it-sigma.herokuapp.com/api/v1/cart/${cartItemsis[r]._id}`, { quantity: a })
+      axiosInstance.put(`https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart/${cartItemsis[r]._id}`, { quantity: a })
         .then(response => {
           console.log('Product quantity updated successfully', response.data.data.cartItems);
           cartItemsis = response.data.data.cartItems
@@ -520,7 +520,7 @@ function changeQuantityplus(r){
       });
       
       // Make the request to update the product quantity
-      axiosInstance.put(`https://buy-it-sigma.herokuapp.com/api/v1/cart/${cartItemsis[r]._id}`, { quantity: a })
+      axiosInstance.put(`https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart/${cartItemsis[r]._id}`, { quantity: a })
         .then(response => {
           console.log('Product quantity updated successfully', response.data.data.cartItems);
           cartItemsis = response.data.data.cartItems
@@ -548,7 +548,7 @@ function removeFromCart(i) {
     console.log(i)
   
     // Make a DELETE request to remove the product
-    axios.delete(`https://buy-it-sigma.herokuapp.com/api/v1/cart/${cartItemsis[i]._id}`, {
+    axios.delete(`https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart/${cartItemsis[i]._id}`, {
       headers: {
           Authorization: `Bearer ${token}`
         }
@@ -601,7 +601,7 @@ btn_apply_coupoun.addEventListener("click" , ()=>{
 
   // Assuming you have the coupon code stored in a variable called "couponCode"
 
-axios.patch('https://buy-it-sigma.herokuapp.com/api/v1/cart/applyCoupon', { coupon: coupoun_text.value }, {
+axios.patch('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart/applyCoupon', { coupon: coupoun_text.value }, {
   headers: {
     Authorization: `Bearer ${token}`,
   }

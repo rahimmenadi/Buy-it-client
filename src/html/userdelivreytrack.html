@@ -397,7 +397,7 @@
  
     var token = localStorage.getItem('token')
     console.log(token)
-    axios.get('https://buy-it-sigma.herokuapp.com/api/v1/wishlist', {
+    axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/wishlist', {
         headers: {
            Authorization: 'Bearer ' + token
           }
@@ -415,7 +415,7 @@
         console.error('Error adding product:', error);
       });
     
-    axios.get('https://buy-it-sigma.herokuapp.com/api/v1/cart', {
+    axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/cart', {
         headers: {
             Authorization: 'Bearer ' + token
           }
@@ -446,7 +446,7 @@ const two = document.querySelector(".two");
 const three = document.querySelector(".three");
 const four = document.querySelector(".four");
 const five = document.querySelector(".five");
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/orders/'+orderid, {
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/orders/'+orderid, {
   headers: {
     Authorization: 'Bearer ' + token
   }

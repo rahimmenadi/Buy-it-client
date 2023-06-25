@@ -237,7 +237,7 @@ for (var i = 0; i < options.length; i++) {
 }
 
 
-axios.get('https://buy-it-sigma.herokuapp.com/api/v1/products')
+axios.get('https://easy-blue-beaver-yoke.cyclic.app//api/v1/products')
     .then(function (response) {
         var data = response.data;
         // var a = response.data;
